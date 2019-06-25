@@ -1,4 +1,8 @@
+require("dotenv").config();
 import * as vscode from "vscode";
+import { Weather } from "./weather";
+import { weatherData } from "./data";
+import { getWeather } from "./network";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "weatherbar" is now active!');
@@ -7,12 +11,21 @@ export function activate(context: vscode.ExtensionContext) {
     20000
   );
 
-  //   statusBarItem.command = "extension.weatherBar";
-
   let disposable = vscode.commands.registerCommand(
     "extension.weatherBar",
-    () => {
-      statusBarItem.text = "🌞";
+    async () => {
+      // TODO: Make this request on a timer
+      // TODO: Investigate various config options for frequency of API call
+      // TODO: Actually make the API work
+      const identifier = weatherData.weather[0].main;
+      console.log(
+        "zip code",
+        await getWeather(
+          vscode.workspace.getConfiguration("weatherBar.config").get("name")
+        )
+      );
+      //   @ts-ignore
+      statusBarItem.text = Weather[identifier];
       statusBarItem.show();
     }
   );

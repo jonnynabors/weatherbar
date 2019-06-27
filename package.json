@@ -25,14 +25,17 @@
       "title": "Weather Bar Config",
       "properties": {
         "weatherBar.zipCode": {
-          "type": "number",
+          "type": [
+            "number",
+            "string"
+          ],
           "default": 12345,
           "description": "ZIP Code for the weather."
         },
-        "weatherBar.interval": {
+        "weatherBar.intervalInMinutes": {
           "type": "number",
           "default": null,
-          "description": "Specifies the refresh interval for fetching the weather."
+          "description": "Specifies the refresh interval in minutes for fetching the weather."
         }
       }
     }

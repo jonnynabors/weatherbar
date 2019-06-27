@@ -1,12 +1,20 @@
 import axios from "axios";
 
-const baseUrl = "https://pro.openweathermap.org/data/2.5/climate/month";
+const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
+
+export interface WeatherData {
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+}
 
 export async function getWeather(zip: any) {
-  return await axios.get(baseUrl, {
+  const response = await axios.get(baseUrl, {
     params: {
       zip: `${zip},us`,
       appid: process.env.API_KEY
     }
   });
+  return response.data.weather as [WeatherData];
 }

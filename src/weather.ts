@@ -1,3 +1,8 @@
 export enum Weather {
-  Clear = "🌞"
+  Clear = "🌞",
+  Clouds = "☁️",
+  Rain = "🌧️",
+  Drizzle = "🌧️",
+  Thunderstorm = "⛈️",
+  Default = "❌"
 }

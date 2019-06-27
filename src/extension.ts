@@ -16,9 +16,8 @@ export function activate(context: vscode.ExtensionContext) {
     "extension.weatherBar",
     async () => {
       const zipCode = vscode.workspace
-        .getConfiguration("weatherBar.config")
-        .get("name");
-
+        .getConfiguration("weatherBar")
+        .get("zipCode");
       // add validation to ensure user has configured a 5 character ZIP
       if (typeof zipCode !== "number" || zipCode.toString().length !== 5) {
         vscode.window.showErrorMessage(

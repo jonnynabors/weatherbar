@@ -20,16 +20,19 @@
         "title": "Weather Bar"
       }
     ],
-    "configurationDefaults": {},
     "configuration": {
+      "type": "object",
       "title": "Weather Bar Config",
       "properties": {
-        "weatherBar.config": {
-          "name": {
-            "type": "number",
-            "default": 12345,
-            "description": "Your ZIP Code"
-          }
+        "weatherBar.zipCode": {
+          "type": "number",
+          "default": 12345,
+          "description": "ZIP Code for the weather."
+        },
+        "weatherBar.interval": {
+          "type": "number",
+          "default": null,
+          "description": "Specifies the refresh interval for fetching the weather."
         }
       }
     }

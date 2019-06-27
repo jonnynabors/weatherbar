@@ -1,0 +1,29 @@
+ _______ ____  _____   ____   _____ 
+ |__   __/ __ \|  __ \ / __ \ / ____|
+    | | | |  | | |  | | |  | | (___  
+    | | | |  | | |  | | |  | |\___ \ 
+    | | | |__| | |__| | |__| |____) |
+    |_|  \____/|_____/ \____/|___
+
+* GET WEATHER ON DEFINED INTERVAL
+  * Define a minimum interval in minutes
+
+* SUPPORT ALL VALID ZIP CODES
+
+~~* MAKE API CALL FOR ZIPCODE~~
+
+~~* DEFAULT EMOJI FOR INITIAL LOAD~~
+
+~~* HANDLE CASE IF NO ZIP IS PROVIDED~~
+
+~~* MANUALLY FETCH WEATHER STATUS~~
+
+* AUTOMATICALLY GET WEATHER ON VSCODE OPEN
+
+~~* ADD MORE EMOJIS~~
+
+~~* SHOW ERROR MESSAGE IF ZIP IS INVALID~~
+
+~~* IMPROVE CONFIGURATION~~
+
+~~* ADD DESCRIPTION AFTER EMOJI~~

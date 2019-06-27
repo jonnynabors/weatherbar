@@ -9,6 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.StatusBarAlignment.Left,
     20000
   );
+  statusBarItem.text = Weather["Default"];
 
   // The function below is executed on a manual invocation of Weather Bar
   let disposable = vscode.commands.registerCommand(
@@ -26,11 +27,12 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
 
-      statusBarItem.text = Weather["Default"];
       try {
         const currentWeather = (await getWeather(zipCode)) as [WeatherData];
         //   @ts-ignore
-        statusBarItem.text = Weather[currentWeather[0].main];
+        statusBarItem.text = `${Weather[currentWeather[0].main]} ${
+          currentWeather[0].description
+        }`;
       } catch (error) {
         console.error("Error occurred while fetching weather for zip", zipCode);
         // TODO: HANDLE ERRORS
